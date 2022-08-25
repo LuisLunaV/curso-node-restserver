@@ -15,7 +15,7 @@ const users = {
 
         // const total = await Usuario.countDocuments( query );
 
-        const [total, usuarios] =await Promise.all([
+        const [total, usuarios] = await Promise.all([
             Usuario.countDocuments( query ),
             Usuario.find( query )
             .skip( Number( desde ))
