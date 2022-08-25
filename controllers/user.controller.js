@@ -71,13 +71,20 @@ const users = {
     userDelete : async(req, res)=>{
         const { id } = req.params;
 
+        // const uid = req.uid;
+        
         // Borrar fisicamente de la BD
         // const usuario = await Usuario.findByIdAndDelete( id );
 
         //Cambiar el estado del usuario
-        const usuario = await Usuario.findByIdAndUpdate( id, {estado:false})
+        const usuario = await Usuario.findByIdAndUpdate( id, {estado:false});
+        // const usuarioAutenticado = req.usuario;
+
+
+
         res.status(200).json({
             usuario
+            // usuarioAutenticado
         })
     }
 

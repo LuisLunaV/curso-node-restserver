@@ -41,7 +41,8 @@ const UsuarioSchema = Schema({
 
 //Funcion para remover la version y el password a la hora de guardar en postman
 UsuarioSchema.methods.toJSON = function(){
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    usuario.uid = _id;
     return usuario;
 }
 
