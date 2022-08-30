@@ -57,13 +57,14 @@
 
         //Salir de la session
         const button = document.querySelector('#google_singout');
-        button.addEventListener('click', ()=>{
-            // console.log(google.accounts.id);
+        button.addEventListener('click', async()=>{
+            console.log(google.accounts.id);
             google.accounts.id.disableAutoSelect()
 
             google.accounts.id.revoke( localStorage.getItem('email'), done =>{
+                console.log('consent revoked');
                 localStorage.clear();
-                location.reload();
+                // location.reload();
             });
 
         });
