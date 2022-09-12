@@ -32,6 +32,9 @@ const users = {
     userPut : async(req, res)=>{
         
         const { id } = req.params;
+        //Al dividir los campos {_id, password, google, ...resto}
+        //Estoy haciendo que ignoremos (_id, password, google)
+        //Y solo querramos guardas lo que esta en el campo resto el cual ya NO los contendra.
         const {_id, password, google, ...resto} = req.body;
 
         //TODO validar contra base de dato

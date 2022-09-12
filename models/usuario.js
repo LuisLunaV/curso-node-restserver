@@ -4,18 +4,18 @@ const UsuarioSchema = Schema({
 
     nombre: {
         type: String,
-        require: [true, 'El nombre es obligatorio'],
+        required: [true, 'El nombre es obligatorio'],
     },
 
     correo: {
         type: String,
-        require: [true, 'El correo es obligatorio'],
+        required: [true, 'El correo es obligatorio'],
         unique: true
     },
 
     password: {
         type: String,
-        require: [true, 'La contraseña es obligatoria']
+        required: [true, 'La contraseña es obligatoria']
     },
 
     img: {
@@ -24,7 +24,7 @@ const UsuarioSchema = Schema({
 
     rol: {
         type: String,
-        require: true,
+        required: true,
         emun: ['ADMIN_ROLE','USER_ROLE']
     },
 
